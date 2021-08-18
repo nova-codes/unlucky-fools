@@ -1,0 +1,190 @@
+:root {
+    --blue: #4a57a1;
+    --indigo: #4b4a85;
+    --purple: #90569b;
+    --pink: #c25a90;
+    --red: #e26873;
+    --orange: #e9988b;
+    --yellow: #f6c78b;
+    --green: #7bba88;
+    --teal: #72caaf;
+    --cyan: #80c2b9;
+    --primary: #5891b8;
+    --secondary: #999999;
+    --success: #92dda2;
+    --danger: #993760;
+    --warning: #f6b96b;
+    --info: #8d6c9f;
+    --light: #fafafa;
+    --dark: #333333;
+  }
+
+html {
+    height: 100%;
+}
+
+body {
+    background-image: linear-gradient(to top right, var(--indigo), var(--pink));
+    margin: 0;
+    font-family: 'Cutive Mono', monospace;
+    text-align: center;
+    overflow: hidden;  
+}
+
+a:link,
+a:active,
+a:visited,
+a { text-decoration: none;}
+  
+code {
+    font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New', monospace;
+}
+
+.header {
+    background: transparent;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center; 
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    position: relative; 
+    z-index: 1;
+}
+  
+  .text-header {
+    font-size: calc(70px + 2vmin);
+    color: var(--light);
+    font-family: 'Yellowtail';
+    position: absolute;
+    top: 50px;
+    text-shadow: 2px 2px rgba(75,74,133,0.9)
+  }
+  
+  .text-header span {
+    font: 19px/100% 'Cutive Mono', monospace; 
+    display: block;
+    text-align: left; 
+    margin-top: 30px; 
+  }
+
+.input-container {
+    background: var(--light);
+    padding: 40px; 
+    display: flex;
+    flex-flow: column nowrap;
+    align-items: center;
+    justify-content: center; 
+    width: 40%; 
+    height: 20%;
+    border-radius: 50px; 
+}
+
+.uf-title {
+    font: 80px/100% 'Yellowtail';
+    color: var(--pink); 
+    text-transform: lowercase;
+    margin: 0 0 20px 0;
+    text-shadow: 0.5px 0.5px white,
+                 3px 3px rgba(75,74,133,0.9);
+    
+}
+
+.input-field {
+    width: 100%;
+    box-sizing: border-box;
+    padding: 15px;
+    border-radius: 50px;
+    border: 0.5px solid var(--indigo);
+    margin-bottom: 20px;
+    text-align: center; 
+    font: 14px/100% 'Cutive Mono', monospace; 
+}
+
+.he-btn {
+    padding: 15px; 
+    border: 0;
+    outline: 0; 
+    font: bold 20px/100% 'Calibri', sans-serif;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    color: white;
+}
+
+.btn-round {
+    border-radius: 50px;
+}
+  
+.btn-indigo {
+    background: var(--indigo);
+    width: 75%;
+    box-sizing: border-box;
+}
+
+#unlucky-con {
+    background: rgba(46,46,46,0.8);
+    visibility: hidden;
+    position: absolute;
+    top: 0;
+    left: 0; 
+    margin: 0;
+    padding: 0;
+    z-index: 2;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    transition: opacity 0.5s ease, visibility 0.5s ease;
+    will-change: opacity, visibility; 
+}
+
+#unlucky-con.open {
+    visibility: visible; 
+    opacity: 1;
+    transition: opacity 1.5s ease, visibility 0.5s ease;
+}
+
+#unlucky {
+    color: white;
+    font-size: 100px;
+    z-index: 3;
+    visibility: hidden;
+    opacity: 0;
+    position: fixed;
+    left: 50%;
+    top: 50%;
+    transition: opacity 0.4s ease, visibility 0.4s ease;
+    will-change: opacity;
+    transform: translate(-50%, -50%); 
+    text-shadow: 2px 2px black, -2px 2px black, 2px -2px black, -2px -2px black;
+}
+
+#unlucky.open {
+    visibility: visible; 
+    opacity: 1;
+    transition: opacity 0.5s ease 0.5s, visibility 0.5s ease 0.5s;
+}
+
+#close {
+    height: 30px;
+    visibility: hidden;
+    opacity: 0;
+    position: absolute;
+    top: 40px;
+    right: 40px;
+    font: 30px/100% 'Cutive Mono', monospace;
+    padding-bottom: 2px;
+    border-bottom: 1px solid white; 
+    color: white;
+    transition: opacity 0.5s ease, visibility 0.5s ease;
+    will-change: opacity;
+    z-index: 4;
+    cursor: crosshair; 
+}
+
+#close.open {
+    visibility: visible; 
+    opacity: 1;
+    transition: opacity 0.5s ease 1s, visibility 0.5s ease 1s;
+}
